@@ -70,7 +70,7 @@ def _compute_entropy_features(window):
 
 def _compute_magnitude_entropy_features(window):
     hist = np.histogram(_compute_magnitude(window), density=True)[0]
-    return -np.nansum((hist*np.log(np.abs(hist))))
+    return [-np.nansum((hist*np.log(np.abs(hist))))]
 
 def extract_features(window):
     """
