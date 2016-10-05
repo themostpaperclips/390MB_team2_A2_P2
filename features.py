@@ -88,15 +88,15 @@ def extract_features(window):
     x = np.append(x, _compute_mean_features(window))
 
     # Statistical Features
-    x = np.append(x, _compute_variance_features(windows))
-    x = np.append(x, _compute_zero_crossing_rate_features(windows))
+    x = np.append(x, _compute_variance_features(window))
+    x = np.append(x, _compute_zero_crossing_rate_features(window))
 
     # Magnitude features
-    x = np.append(x, _compute_magnitude_mean_features(windows))
-    x = np.append(x, _compute_magnitude_variance_features(windows))
+    x = np.append(x, _compute_magnitude_mean_features(window))
+    x = np.append(x, _compute_magnitude_variance_features(window))
 
     # Entropy features
-    x = np.append(x, _compute_entropy_features(windows))
-    x = np.append(x, _compute_magnitude_entropy_features(windows))
+    x = np.append(x, _compute_entropy_features(window))
+    x = np.append(x, _compute_magnitude_entropy_features(window))
 
     return x
